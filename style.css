@@ -1,0 +1,113 @@
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('backg3.jpg');
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+}
+.heart{
+    width: 100px;
+    height: 100px;
+    background: rgb(150, 0, 0);
+    position: relative;
+    transform: rotate(-45deg);
+    animation: pulse 1s infinite;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.heart::before,
+.heart::after{
+    content: "";
+    width: 100px;
+    height: 100px;
+    background: rgb(150, 0, 0);
+    border-radius: 50%;
+    position: absolute;
+}
+.heart::before{
+    top: -50px;
+    left: 0;
+}
+.heart::after{
+    top: 0;
+    left: 50px;
+}
+@keyframes pulse{
+    0% {transform: rotate(-45deg) scale(1);}
+    50% {transform: rotate(-45deg) scale(1.1);}
+    100% {transform: rotate(-45deg) scale(1);}
+}
+.start-button{
+    background: rgb(238, 237, 237);
+    font-family: "Pixelify Sans", sans-serif;
+    font-weight: bold;
+    color: black;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transform: rotate(45deg);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    transition: background 0.2 ease;
+} 
+.start-button:hover{
+    background: rgb(255, 129, 148);
+}
+
+.envelope{
+    display: none;
+    width: 500px;
+    height: 350px;
+    background: whitesmoke;
+    border: 2px solid rgb(218, 218, 218);
+    border-radius: 10px;
+    box-shadow: 0 0 20px #949191;
+    position: relative;
+    cursor: pointer;
+}
+.envelope-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Dancing Script', cursive;
+    font-size: 36px;
+    color: orchid;
+    font-weight: bold;
+    z-index: 0;
+    pointer-events: none;
+}
+.letter{
+    display: none;
+    width: 450px;
+    height: 550px;
+    background: orchid;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    position: absolute;
+    top: -120px;
+    left: 10px;
+    border: solid white;
+    border-radius: 10px; 
+    cursor: pointer;
+    box-shadow: 0 0 10px #949191;
+    z-index: 1;
+}
+.image-container{
+    display: none;
+    margin-top: 20px;
+}
+img{
+    max-width: 470px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #949191;
+}
